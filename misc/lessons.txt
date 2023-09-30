@@ -45,3 +45,18 @@ lesson 7: use .append in lists and in dictionaries that contain lists
 virus_dict["id"]=virus.id doesn´t work because each new value in the for loop overwrites the last one.
 append doesn´t overwrite it. beware: for dict you need (empty) lists as values. None or other datatypes dont work.
 adding this way dict["(new)key"]= new_value works only if the key is new and not used already.
+
+lesson 8: iloc vs loc in pandas
+In pandas, iloc and loc are two methods used to access data from a DataFrame
+iloc (Integer Location):
+iloc is used to access data based on integer positions or indices.
+You specify row and column indices using integer values.
+It is primarily used when you want to select data based
+on its numerical position in the DataFrame, regardless of the row or column labels.
+value = df.iloc[0, 1]
+loc (Label Location):
+loc is used to access data based on labels or row/column names.
+You specify row and column labels using the actual label values.
+It is primarily used when you want to select data based
+on the row or column labels, which can be non-integer (character)
+value = df.loc['X', 'B']
