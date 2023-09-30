@@ -8,3 +8,19 @@ That way you can load the python version and dependencies you need without depen
 each package will exist only in that enviroment.
 > here in install biopython only in the rna_fold enviroment.
 
+lesson 3: biopython
+biopython is a bioinformatics module with a lot of functions.
+Here I am using it to load fasta files into python.
+> Install biopython under conda: conda install -c conda-forge biopython
+> import: import Bio
+
+lesson 4: install pandas for data manipulation and data frame usage
+> conda install pandas
+> import pandas as pd
+
+lesson 5: Sequences from FASTA-files are read as <class 'Bio.Seq.Seq'>
+> see print(type(virus.seq)) in code/import_fastafile.py
+Need to convert them to string with str-function
+virus_list.append([virus.id,str(virus.seq)])
+
+
