@@ -1,0 +1,10 @@
+First lesson: use snake case for methods, script names/modules and functions.
+snake case: using all lowercase letters and separating words with underscores.
+so instead of RNAfold.py use rna_fold.py for script name.
+> Warning in VScode: Module name "RNAfold" doesn't conform to snake_case naming style.
+
+lesson 2: when using anaconda create a seperate conda enviroment for each project.
+That way you can load the python version and dependencies you need without dependency problems.
+each package will exist only in that enviroment.
+> here in install biopython only in teh rna_fold enviroment.
+
