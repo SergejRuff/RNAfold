@@ -24,3 +24,18 @@ Need to convert them to string with str-function
 virus_list.append([virus.id,str(virus.seq)])
 
 
+lesson 6: convert lists/dict to dataframe objects.
+dont fill empty dataframe objects directly!
+Use a list to collect your data, then initialise a DataFrame when you are ready.
+Either a list-of-lists or list-of-dicts format will work, pd.DataFrame accepts both.
+Pros of this approach:
+It is always cheaper to append to a list and create a DataFrame in one go than
+it is to create an empty DataFrame (or one of NaNs) and append to it over and over again.
+Lists also take up less memory and are a much lighter data structure to work with, append, and remove (if needed).
+dtypes are automatically inferred (rather than assigning object to all of them).
+A RangeIndex is automatically created for your data, instead of you having to take
+care to assign the correct index to the row you are appending at each iteration
+this is also mentioned in the documentation:
+"Iteratively appending rows to a DataFrame can be more computationally intensive than a single concatenate.
+A better solution is to append those rows to a list and then concatenate the list with the original DataFrame all at once."
+source: https://stackoverflow.com/questions/13784192/creating-an-empty-pandas-dataframe-and-then-filling-it (last 30.09.23)
