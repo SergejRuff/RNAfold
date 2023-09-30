@@ -6,5 +6,5 @@ so instead of RNAfold.py use rna_fold.py for script name.
 lesson 2: when using anaconda create a seperate conda enviroment for each project.
 That way you can load the python version and dependencies you need without dependency problems.
 each package will exist only in that enviroment.
-> here in install biopython only in teh rna_fold enviroment.
+> here in install biopython only in the rna_fold enviroment.
 
