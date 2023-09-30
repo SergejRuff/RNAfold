@@ -22,3 +22,18 @@ virus_df = pd.DataFrame(virus_list, columns=["id", "sequences"])
 # you can also use directories.
 
 print(virus_df)
+
+# same thing but with dictionaries, not lists.
+
+# create empty dictionary
+virus_dict = {"id": [], "seq": []}
+
+for virus in SeqIO.parse("data/nido_roniviruses_n6.fasta", "fasta"):
+    # append dictionary
+    virus_dict["id"].append(virus.id)
+    virus_dict["seq"].append(str(virus.seq))
+
+print("virus dictionary\n", virus_dict)
+virus_df_ = pd.DataFrame(virus_dict)  # advantage: dont need to set col-names
+
+print(virus_df_)

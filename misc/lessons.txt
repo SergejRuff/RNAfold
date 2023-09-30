@@ -39,3 +39,9 @@ this is also mentioned in the documentation:
 "Iteratively appending rows to a DataFrame can be more computationally intensive than a single concatenate.
 A better solution is to append those rows to a list and then concatenate the list with the original DataFrame all at once."
 source: https://stackoverflow.com/questions/13784192/creating-an-empty-pandas-dataframe-and-then-filling-it (last 30.09.23)
+
+lesson 7: use .append in lists and in dictionaries that contain lists
+> see import_fastafile.py where i append elements to lists and dictionaries containing lists as values.
+virus_dict["id"]=virus.id doesn´t work because each new value in the for loop overwrites the last one.
+append doesn´t overwrite it. beware: for dict you need (empty) lists as values. None or other datatypes dont work.
+adding this way dict["(new)key"]= new_value works only if the key is new and not used already.
