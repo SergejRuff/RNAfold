@@ -10,7 +10,7 @@ import pandas as pd
 virus_list = []  # create empty list to store values inside.
 
 
-for virus in SeqIO.parse("../data/nido_roniviruses_n6.fasta", "fasta"):
+for virus in SeqIO.parse("data/nido_roniviruses_n6.fasta", "fasta"):
     # append a list with what you want to list
     virus_list.append([virus.id, str(virus.seq)])
     # biopython imports sequences as Class Bioseq (see print-command).
@@ -28,7 +28,7 @@ print(virus_df)
 # create empty dictionary
 virus_dict = {"id": [], "seq": []}
 
-for virus in SeqIO.parse("../data/nido_roniviruses_n6.fasta", "fasta"):
+for virus in SeqIO.parse("data/nido_roniviruses_n6.fasta", "fasta"):
     # append dictionary
     virus_dict["id"].append(virus.id)
     virus_dict["seq"].append(str(virus.seq))

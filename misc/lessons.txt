@@ -81,3 +81,7 @@ Traceback (most recent call last):
                   ^^^^^^^^^^^^^^^^^^^^^^^^
 FileNotFoundError: [Errno 2] No such file or directory: '/data/nido_roniviruses_n6.fasta'
 > Important if you want to switch IDEs (from VScode to Pycharm).
+> TLDR: Vscode and Pycharm dont´t share the same relative paths.
+
+lesson 10: for R users: you can use / for paths - see example lesson 9.
+"data/nido_roniviruses_n6.fasta"
