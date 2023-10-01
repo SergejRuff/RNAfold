@@ -85,3 +85,27 @@ FileNotFoundError: [Errno 2] No such file or directory: '/data/nido_roniviruses_
 
 lesson 10: for R users: you can use / for paths - see example lesson 9.
 "data/nido_roniviruses_n6.fasta"
+
+lesson 11: dogstrings for modules and functions and methods.
+It is good practice to add docstrings which describe what the function does
+and why you use a module.
+VSCode provides you with a warning if you dont include dogstrings (""" """)
+function: use dogstring in function like I did has_a_tail.py.
+> Missing module docstring
+> Missing function or method docstring.
+
+lesson 12: re module.
+re module is a build-in package (dont need to install it) in python for work with regular expressions.
+See example in has_a_tail.py.
+> tutorial: https://www.w3schools.com/python/python_regex.asp
+> Important: Case sensitive. in my code i am using "A{5,}$" to detect Poly-A-tail at the end
+by looking at the end of the sequence ($) and defining a Poly-A-Tail if the last nucleotides are 5 or more A´s.
+But I am looking for Capital A. So the sequence fffggghhhdddAAAAAA is recognized as a Poly A tail but fffggghhhdddaaaaaa is not, 
+because the As are not capitalized.
+> Solution convert to upper  or lowercase beforehand.
+search returns pattern-object (the As at the end).
+If I need True or False depending if As are there or not =Use bool to convert to True or False.
+
+lesson 13: line length (in VScode for example)
+keep your line length =< 100.
+Warning in VSCode: Line too long (134/100)
