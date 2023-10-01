@@ -22,6 +22,9 @@ lesson 5: Sequences from FASTA-files are read as <class 'Bio.Seq.Seq'>
 > see print(type(virus.seq)) in code/import_fastafile.py
 Need to convert them to string with str-function
 virus_list.append([virus.id,str(virus.seq)])
+Some functions like .translate still require the Seq. Datatype. The don´t work with strings.
+> You can turn string into Seq-type with Seq()-function.
+> my_seq = Seq("MKQHKAMIVALIVICITAVVAALVTRKDLCEVHIRTGQTEVAVF")
 
 
 lesson 6: convert lists/dict to dataframe objects.
@@ -105,7 +108,16 @@ because the As are not capitalized.
 > Solution convert to upper  or lowercase beforehand.
 search returns pattern-object (the As at the end).
 If I need True or False depending if As are there or not =Use bool to convert to True or False.
+upper only works on str-types.
 
 lesson 13: line length (in VScode for example)
 keep your line length =< 100.
 Warning in VSCode: Line too long (134/100)
+
+lesson 14: index starts at 0 not 1 in python.
+range() is inclusive für ersten Wert und exclusive für letzten Wert.
+
+lesson 15: use apply to use functions over multiple values instead of for loops.
+apply and vectirozation is faster than for loops and should be used over loops if possible.
+here is an example where i use the has_poly_a_tail-function for every sequence in a dataframe:
+> print(virus_df["sequences"].apply(has_poly_a_tail))
