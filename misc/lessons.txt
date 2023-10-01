@@ -60,3 +60,24 @@ You specify row and column labels using the actual label values.
 It is primarily used when you want to select data based
 on the row or column labels, which can be non-integer (character)
 value = df.loc['X', 'B']
+
+lesson 9: difference in relative paths between VScode and pycharm:
+if you want to access the fasta file under A:\coding\RNAfold\data\nido_roniviruses_n6.fasta (RNAfold is base directory for project)
+and you want to use the relative path, be aware of differences between VScode and Pycharm.
+VScode: "data/nido_roniviruses_n6.fasta"
+Pycharm: "../data/nido_roniviruses_n6.fasta"
+If you use the VScode relative path in Pycharm to import fastafiles, you will get the following error:
+Traceback (most recent call last):
+  File "A:\coding\RNAfold\code\import_fastafile.py", line 13, in <module>
+    for virus in SeqIO.parse("/data/nido_roniviruses_n6.fasta", "fasta"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Serij\anaconda3\envs\RNAFOLD\Lib\site-packages\Bio\SeqIO\__init__.py", line 605, in parse
+    return iterator_generator(handle)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Serij\anaconda3\envs\RNAFOLD\Lib\site-packages\Bio\SeqIO\FastaIO.py", line 223, in __init__
+    super().__init__(source, mode="t", fmt="Fasta")
+  File "C:\Users\Serij\anaconda3\envs\RNAFOLD\Lib\site-packages\Bio\SeqIO\Interfaces.py", line 45, in __init__
+    self.stream = open(source, "r" + mode)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/nido_roniviruses_n6.fasta'
+> Important if you want to switch IDEs (from VScode to Pycharm).
